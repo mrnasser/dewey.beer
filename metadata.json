@@ -1,0 +1,7 @@
+{
+  "name": "dewey.beer",
+  "description": "A personal self-hosted dashboard for services and custom tools.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
