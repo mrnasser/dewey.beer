@@ -52,7 +52,13 @@ import {
   Copy,
   RotateCcw,
   Minimize2,
-  Maximize2
+  Maximize2,
+  GlassWater,
+  RefreshCw,
+  Maximize,
+  Pencil,
+  Wand2,
+  Headphones
 } from 'lucide-react';
 
 export const IconMap: Record<string, React.FC<any>> = {
@@ -108,7 +114,13 @@ export const IconMap: Record<string, React.FC<any>> = {
   Copy,
   RotateCcw,
   Minimize2,
-  Maximize2
+  Maximize2,
+  GlassWater,
+  RefreshCw,
+  Maximize,
+  Pencil,
+  Wand2,
+  Headphones
 };
 
 interface DynamicIconProps {

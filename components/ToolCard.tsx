@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from './Layout';
-import { ArrowRight, Lock, ExternalLink } from 'lucide-react';
+import { ArrowRight, Lock, ExternalLink, FlaskConical } from 'lucide-react';
 import { InternalTool } from '../types';
 import { DynamicIcon } from './Icons';
 
@@ -28,7 +28,11 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
            Dev
          </span>
         )}
-        {/* External Icon indicator if needed, but ArrowRight vs ExternalLink is good differentiation below */}
+        {tool.status === 'beta' && (
+           <span className="text-[10px] font-bold uppercase tracking-wider bg-purple-500/10 text-purple-400 px-2 py-1 rounded-full border border-purple-500/20 flex items-center gap-1">
+           <FlaskConical size={10} /> Beta
+         </span>
+        )}
       </div>
 
       <div className="flex-1">

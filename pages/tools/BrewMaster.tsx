@@ -328,6 +328,15 @@ const BrewMaster: React.FC = () => {
   return (
     <div className="animate-fade-in max-w-6xl mx-auto pb-20 space-y-8">
       
+      {/* Beta Warning */}
+      <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 flex items-center gap-3 text-purple-200">
+         <FlaskConical size={20} className="text-purple-400 flex-shrink-0" />
+         <div>
+            <span className="font-bold text-purple-400 text-sm uppercase tracking-wide block mb-0.5">Beta Preview</span>
+            <span className="text-sm text-purple-200/80">Calculations should be verified. Features incomplete.</span>
+         </div>
+      </div>
+
       {/* --- Global Header / Links --- */}
       <div className="flex flex-col md:flex-row items-center justify-between bg-slate-900/50 border border-amber-500/20 rounded-2xl p-6 gap-6">
         <div>
@@ -575,7 +584,7 @@ const BrewMaster: React.FC = () => {
              <div className="mb-4">
                 <label className="text-xs text-slate-500 uppercase font-bold mb-2 block">Source Water (PPM)</label>
                 <div className="grid grid-cols-6 gap-2">
-                   {Object.entries(recipe.sourceWater).map(([ion, val]) => (
+                   {(Object.entries(recipe.sourceWater) as [keyof WaterProfile, number][]).map(([ion, val]) => (
                       <div key={ion} className="text-center">
                          <input 
                            type="number" 
@@ -609,7 +618,7 @@ const BrewMaster: React.FC = () => {
                    <span className="text-xs text-cyan-400">Ratio {chlorideSulfateRatio.toFixed(1)} (Cl:SO4)</span>
                 </div>
                 <div className="grid grid-cols-6 gap-1 text-center">
-                    {Object.entries(waterProfile).map(([ion, val]) => (
+                    {(Object.entries(waterProfile) as [string, number][]).map(([ion, val]) => (
                         <div key={ion} className="bg-slate-900 rounded py-1">
                            <div className="text-sm font-bold text-white">{Math.round(val)}</div>
                            <div className="text-[9px] text-slate-500 uppercase">{ion}</div>

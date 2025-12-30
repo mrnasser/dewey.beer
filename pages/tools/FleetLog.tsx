@@ -18,7 +18,8 @@ import {
   Filter,
   MoreHorizontal,
   Download,
-  ArrowUpRight
+  ArrowUpRight,
+  FlaskConical
 } from 'lucide-react';
 import { DynamicIcon } from '../../components/Icons';
 
@@ -291,6 +292,15 @@ const FleetLog: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-6xl mx-auto pb-20">
+
+      {/* Beta Warning */}
+      <div className="mb-6 bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 flex items-center gap-3 text-purple-200">
+         <FlaskConical size={20} className="text-purple-400 flex-shrink-0" />
+         <div>
+            <span className="font-bold text-purple-400 text-sm uppercase tracking-wide block mb-0.5">Beta Preview</span>
+            <span className="text-sm text-purple-200/80">This tool is actively being developed. Data structure changes may occur.</span>
+         </div>
+      </div>
       
       {/* Header */}
       <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
